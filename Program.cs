@@ -1,27 +1,13 @@
-﻿void SecondNumber(int x)
+﻿void Week(int x)
 {
-    int number = x;
-if(number>99){
-    while(number>1000)
+    if (x > 0 && x < 8)
     {
-    number=number/10;
+        if (x > 0 && x < 6)
+        { Console.WriteLine("Будний денечек"); }
+        else { Console.WriteLine("Выходной денечек"); }
     }
-    int result = number%10;
-    Console.WriteLine($"Третья цифра числа {x} = {result}");
+    else { Console.WriteLine("Такого дня недели нет!)"); }
 }
-else if (number<-99){
-     number = number*-1;
-     while(number>1000)
-    {
-      number=number/10;
-    }
-    int result = number%10;
-    Console.WriteLine($"Третья цифра числа {x} = {result}");
-}
-else {Console.WriteLine("Третьей цифры нет!)"); }
-}  
-
-Console.Write("Введите число: ");
+Console.Write("Введите номер дня недели: ");
 int number = int.Parse(Console.ReadLine());
-
-SecondNumber(number);
+Week(number);
