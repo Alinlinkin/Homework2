@@ -1,21 +1,27 @@
 ﻿void SecondNumber(int x)
 {
-    if (x > 99 && x < 1000)
+    int number = x;
+if(number>99){
+    while(number>1000)
     {
-        int result = x / 10 % 10;
-        Console.WriteLine($"Вторая цифра числа {x} = {result}");
+    number=number/10;
     }
-    else if (x > -1000 && x < -99)
-    {
-        x = x * -1;
-        int result = x / 10 % 10;
-        Console.WriteLine($"Вторая цифра числа {-x} = {result}");
-    }
-    else { Console.WriteLine("Число не трехзначное, попробуйте снова :)"); }
+    int result = number%10;
+    Console.WriteLine($"Третья цифра числа {x} = {result}");
 }
+else if (number<-99){
+     number = number*-1;
+     while(number>1000)
+    {
+      number=number/10;
+    }
+    int result = number%10;
+    Console.WriteLine($"Третья цифра числа {x} = {result}");
+}
+else {Console.WriteLine("Третьей цифры нет!)"); }
+}  
 
-
-Console.WriteLine("Введите трехзначное число: ");
+Console.Write("Введите число: ");
 int number = int.Parse(Console.ReadLine());
 
 SecondNumber(number);
